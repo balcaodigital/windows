@@ -1,0 +1,14 @@
+Abra o DOS salvador ou o Powershell.
+
+
+1- No Prompt digite DISKPART
+2- Digite LIST DISK, esse comando ira listar os HDs instalados na máquina.
+3- Digite SELECT DISK “X”, no lugar do X colocar o número referente ao HD que deseja formatar, colocar sem aspas.
+4- Agora basta digitar os comandos abaixo.
+5- CLEAN
+6- CREATE PARTITION PRIMARY
+7- SELECT PARTITION 1
+8- ACTIVE
+9- FORMAT FS=NTFS QUICK
+10-ASSIGN
+11-EXIT
