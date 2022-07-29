@@ -1,0 +1,98 @@
+1. Nslookup
+Você pode utilizar o comando nslookup para verificar registros DNS e solucionar problemas.
+
+Pesquisa de registro PTR (IP para nome de domínio)
+nslookup 8.8.8.8
+
+Pesquisa de registro (domínio para endereço IP)
+"nomededomínio" nslookup
+
+Pesquisa MX
+nslookup
+set q=mx
+nomedodominio
+
+
+Pesquisa de registro SOA
+nslookup
+set q=SOA
+nomedodominio
+
+
+CNAME
+set q=cname
+
+Nome do servidor
+nslookup
+set q=ns
+
+digite nomedodominio
+
+
+Usando um servidor DNS alternativo
+nslookup
+
+server=DNS-Server-IP
+nomedodomínio 
+
+2. Netstat
+
+O comando netstat exibe informações de conexão TCP/IP, estatísticas de Ethernet e a tabela de roteamento do computador. Já utilizei muito esse comando em servidores e clientes Windows para solucionar problemas de conexão. 
+
+Para exibir todas as portas ativas
+netstat -a
+
+Exibir todas as conexões em ordem numérica
+netstat -a -n
+
+Exibe o executável que é usado para criar a conexão
+netstat -ab
+
+Exibe estatísticas ethernet.
+netstat -e
+
+Exibe o exe e o ID do processo (PID) associado à conexão.
+netstat -abo
+
+Exibe a tabela de roteamento local dos computadores
+netstat -r
+
+Exibe o FQDN com as informações de conexão.
+netstat -af
+
+3. Whoami
+
+Este comando exibe quem está conectado ao sistema local. Ele também pode exibir a quais grupos um usuário pertence.
+whoami /user
+
+Exibir o nome de usuário no formato UPN
+whoami /upn
+
+
+Exibe o domínio atual, nome de usuário e SID dos usuários
+whoami /user
+
+Exibe todas as informações do usuário atual
+whoami /all
+
+4. Gpresult
+
+O comando gpresult relata quais políticas e configurações de grupo são aplicadas a um usuário ou computador.
+
+Para exibir todos os GPOs aplicados
+gpresult /r
+
+Exibir GPOs aplicados ao usuário
+gpresult /r /scope:user
+
+Exibir GPOs aplicados ao computador
+gpresult /r /scope:computer
+
+Exibir GPOs para um computador remoto
+gpresult /s pcname
+
+Gerar um relatório HTML
+gpresult /h c:\report.html
+
+Enviar saída de comando para um arquivo de texto
+gpresult /r > c:\result.txt
